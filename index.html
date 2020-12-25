@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cart Calculator</title>
+</head>
+<body>
+    <div class="big-container">
+        <form onsubmit="getTotal(this)">
+            <div class="addToCart">
+            <label for="cart" class="label">Add to cart:</label>
+            <select name="list" id="list">
+                <option value="carrot" id="carrot">Selct Product</option>
+                <option value="carrot" id="carrot">Carrot</option>
+                <option value="potato" id="potato">Potato</option>
+                <option value="fish" id="fish">Fish</option>
+                <option value="meat" id="meat">Meat</option>
+                <option value="eggs" id="eggs">Eggs</option>
+            </select>
+            <button type="submit">Calculate</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
