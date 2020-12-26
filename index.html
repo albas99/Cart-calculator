@@ -8,20 +8,37 @@
 </head>
 <body>
     <div class="big-container">
-        <form onsubmit="getTotal(this)">
+        <form  onsubmit= "return getTotal(this)" >
             <div class="addToCart">
             <label for="cart" class="label">Add to cart:</label>
             <select name="list" id="list">
-                <option value="carrot" id="carrot">Selct Product</option>
-                <option value="carrot" id="carrot">Carrot</option>
-                <option value="potato" id="potato">Potato</option>
-                <option value="fish" id="fish">Fish</option>
-                <option value="meat" id="meat">Meat</option>
-                <option value="eggs" id="eggs">Eggs</option>
+                <option value="selectProducts" id="selctProducts">Selct Product</option>
+                <option value="Carrot($2)" id="carrot">Carrot</option>
+                <option value="Potato($3)" id="potato">Potato</option>
+                <option value="Fish($10)" id="fish">Fish</option>
+                <option value="Meat($13)" id="meat">Meat</option>
+                <option value="Eggs($6)" id="eggs">Eggs</option>
             </select>
-            <button type="submit">Calculate</button>
+            <button id="add" onclick="return addItem(this)">Add</button>
         </div>
+        <div id="carrotSelected">
+            <button id="remove" onclick="removeItem()"></button>
+        </div>
+        <div id="potatoSelected">
+            <button id="remove" onclick="removeItem()"></button>
+        </div>
+        <div id="fishSelected">
+            <button id="remove" onclick="removeItem()"></button>
+        </div>
+        <div id="meatSelected">
+            <button id="remove" onclick="removeItem()"></button>
+        </div>
+        <div id="eggsSelected">
+            <button id="remove" onclick="removeItem()"></button>
+        </div>
+        <button id="submit" type="submit">Calculate</button>
         </form>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
