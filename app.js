@@ -1,3 +1,28 @@
+let removeCarrot = document.createElement("button");
+removeCarrot.setAttribute = ("type", "button");
+let textRemoveCarrot = document.createTextNode("Remove");
+removeCarrot.appendChild(textRemoveCarrot);
+
+let removePotato = document.createElement("button");
+removePotato.setAttribute = ("type", "button");
+let textRemovePotato = document.createTextNode("Remove");
+removePotato.appendChild(textRemovePotato);
+
+let removeFish = document.createElement("button");
+removeFish.setAttribute = ("type", "button");
+let textRemoveFish = document.createTextNode("Remove");
+removeFish.appendChild(textRemoveFish);
+
+let removeMeat = document.createElement("button");
+removeMeat.setAttribute = ("type", "button");
+let textRemoveMeat = document.createTextNode("Remove");
+removeMeat.appendChild(textRemoveMeat);
+
+let removeEggs = document.createElement("button");
+removeEggs.setAttribute = ("type", "button");
+let textRemoveEggs = document.createTextNode("Remove");
+removeEggs.appendChild(textRemoveEggs);
+
 addItem = () =>{
     let carrot = document.getElementById("carrot");
     let potato = document.getElementById("potato");
@@ -8,9 +33,8 @@ addItem = () =>{
     let list = document.getElementById("list");
     let output = list.value;
     let digit = document.createElement("input");
-    let remove = document.createElement("button");
-    let textRemove = document.createTextNode("Remove");
-    remove.appendChild(textRemove);
+
+
 
     if(list.value === "selectProducts"){
         alert("Please select a product");
@@ -26,7 +50,8 @@ addItem = () =>{
         document.querySelector('#carrotSelected').style.justifyContent = "space-evenly";
         digit.setAttribute("type", "number");
         document.getElementById("carrotSelected").appendChild(digit);
-        document.getElementById("carrotSelected").appendChild(remove);
+        document.getElementById("carrotSelected").appendChild(removeCarrot);
+
     
         return false;
 
@@ -42,7 +67,7 @@ addItem = () =>{
         document.querySelector('#potatoSelected').style.justifyContent = "space-evenly";
         digit.setAttribute("type", "number");
         document.getElementById("potatoSelected").appendChild(digit);
-        document.getElementById("potatoSelected").appendChild(remove);
+        document.getElementById("potatoSelected").appendChild(removePotato);
         return false;
 
     }
@@ -57,7 +82,7 @@ addItem = () =>{
         document.querySelector('#fishSelected').style.justifyContent = "space-evenly";
         digit.setAttribute("type", "number");
         document.getElementById("fishSelected").appendChild(digit);
-        document.getElementById("fishSelected").appendChild(remove);
+        document.getElementById("fishSelected").appendChild(removeFish);
         return false;
 
     }
@@ -72,8 +97,8 @@ addItem = () =>{
         document.querySelector('#meatSelected').style.justifyContent = "space-evenly";
         digit.setAttribute("type", "number");
         document.getElementById("meatSelected").appendChild(digit);
-        document.querySelector('#remove').style.display ="block"
-        document.getElementById("meatSelected").appendChild(remove);
+        document.getElementById("meatSelected").appendChild(removeMeat);
+
         return false;
 
     }
@@ -88,13 +113,14 @@ addItem = () =>{
         document.querySelector('#eggsSelected').style.justifyContent = "space-evenly";
         digit.setAttribute("type", "number");
         document.getElementById("eggsSelected").appendChild(digit);
-        document.querySelector('#remove').style.display ="block"
-        document.getElementById("eggsSelected").appendChild(remove);
-        return false;
+        document.getElementById("eggsSelected").appendChild(removeEggs);
 
+
+        return false;
     }
 
     return false;
+
 }
 
 removeItem = () => {
@@ -106,16 +132,48 @@ removeItem = () => {
     let list = document.getElementById("list");
     let output = list.value;
     let digit = document.createElement("input");
-    let remove = document.createElement("button");
-    let textRemove = document.createTextNode("Remove");
-    remove.appendChild(textRemove);
-    remove.addEventListener("click", removeItem);
 
-    if(list.value === "carrot"){
-        remove.document.querySelector("#carrotSelected").textContent;
+    let itemCarrot = document.getElementById("carrotSelected");
+
+    if(output === "Carrot($2)"){
+        document.getElementById("carrotSelected").remove();
 
         return false;
     }
 
+    if(output === "Potato($3)"){
+        document.getElementById("potatoSelected").remove();
+
+        return false;
+    }
+
+
+    if(output === "Fish($10)"){
+        document.getElementById("fishSelected").remove();
+
+        return false;
+    }
+
+
+    if(output === "Meat($13)"){
+        document.getElementById("meatSelected").remove();
+
+        return false;
+    }
+
+
+    if(output === "Eggs($6)"){
+        document.getElementById("eggsSelected").remove();
+
+        return false;
+    }
+
+
     return false;
 }
+
+removeCarrot.addEventListener("click", removeItem);
+removePotato.addEventListener("click", removeItem);
+removeFish.addEventListener("click", removeItem);
+removeMeat.addEventListener("click", removeItem);
+removeEggs.addEventListener("click", removeItem);
