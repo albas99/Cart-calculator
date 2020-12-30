@@ -40,6 +40,8 @@ addItem = () =>{
         alert("Please select a product");
         return false;
     }
+
+
     if(list.value === "Carrot($2)"){
         document.querySelector('#carrotSelected').textContent = output;
         document.querySelector('#carrotSelected').style.fontSize = "2rem";
@@ -177,3 +179,42 @@ removePotato.addEventListener("click", removeItem);
 removeFish.addEventListener("click", removeItem);
 removeMeat.addEventListener("click", removeItem);
 removeEggs.addEventListener("click", removeItem);
+
+getTotal = () => {
+    let carrot = document.getElementById("carrot");
+    let potato = document.getElementById("potato");
+    let fish = document.getElementById("fish");
+    let meat = document.getElementById("meat");
+    let eggs = document.getElementById("eggs");
+    let selectProducts = document.getElementById("selectProducts");
+    let list = document.getElementById("list");
+    let output = list.value;
+    let digit = document.createElement("input");
+
+    if(digit < 0 || digit > 100){
+        alert("Invalid amount");
+    }
+
+    let cart = output[];
+
+    let priceOfCarrot = 2;
+    let sumOfCarrot = priceOfCarrot * digit;
+
+    let priceOfPotato = 10;
+    let sumOfPotato = priceOfPotato * digit;
+
+    let priceOfFish = 10;
+    let sumOfFish = priceOfFish * digit;
+
+    let priceOfMeat = 13;
+    let sumOfMeat = priceOfMeat * digit;
+
+    let priceOfEggs = 6;
+    let sumOfEggs = priceOfEggs * digit;
+
+    let sumTotal = sumOfCarrot + sumOfPotato + sumOfFish + sumOfMeat + sumOfEggs;
+
+    document.getElementById("sumTotal").innerHTML = "Your total price is " + sumTotal;
+
+    return false;
+}
