@@ -40,3 +40,12 @@
     width: 10%;
     font-size: 1.3rem;
 }
+
+.new-item{
+    font-size: 2rem;
+    width: 50%;
+    margin: 0 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
